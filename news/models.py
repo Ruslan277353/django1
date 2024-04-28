@@ -9,8 +9,11 @@ class NewsCategory(models.Model):
 
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
 
-class News(models.Model):
+class NewsModel(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     category = models.ForeignKey(NewsCategory, on_delete=models.CASCADE)
@@ -18,3 +21,6 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
+    class Meta:
+        verbose_name = 'New'
+        verbose_name_plural = 'News'
