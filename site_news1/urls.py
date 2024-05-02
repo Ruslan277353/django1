@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from news.views import home_page
+from news.views import home_page, MyFormView, search_news, single_new, login_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_page)
+    path('', home_page),
+    path('search', search_news, name='search_new'),
+    path('new/<int:id>', single_new),
+    path('register', MyFormView.as_view()),
+    path('login/', login_view, name='login')
 ]
