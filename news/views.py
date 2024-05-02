@@ -16,8 +16,8 @@ def search_news(request):
 
         try:
             exact_new = NewsModel.objects.get(title__icontains=get_news)
-            print(f'Yeaah we found for you this product {exact_new}')
-            return redirect(f'product/{exact_new.id}')
+            print(f'Yeaah we found for you this news {exact_new}')
+            return redirect(f'news/{exact_new.id}')
         except:
             print('Not Found')
             return redirect('/')

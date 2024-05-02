@@ -8,10 +8,19 @@
     <title>Document</title>
 </head>
 <body>
-{% for i in news %}
-    <h3>{{ i.title }}</h3>
-    <p>{{ i.description }}</p>
-    <p>Дата добавления: {{ i.date_added }}</p>
-{% endfor %}
+<div class="row">
+    {% for i in news %}
+    <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ i.image.url }}" width="200px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ i.title }}</h5>
+                <p class="card-text">{{ i.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 </body>
 </html>

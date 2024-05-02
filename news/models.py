@@ -18,8 +18,7 @@ class NewsModel(models.Model):
     description = models.TextField()
     category = models.ForeignKey(NewsCategory, on_delete=models.CASCADE)
     date_added = models.DateTimeField(auto_now_add=True)
-    image = models.FileField(upload_to='new_images', default='default_image.jpg')
-
+    image = models.FileField(upload_to='new_images')
     def __str__(self):
         return self.title
     class Meta:
